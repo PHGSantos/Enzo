@@ -1,0 +1,217 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://jungle_background.png" type="Texture" id=1]
+[ext_resource path="res://cena_inicial.gd" type="Script" id=2]
+[ext_resource path="res://Imagens/plat_grande.png" type="Texture" id=3]
+[ext_resource path="res://Imagens/plat_pequena.png" type="Texture" id=4]
+[ext_resource path="res://knbd_enzo.gd" type="Script" id=5]
+[ext_resource path="res://Imagens/run/run1.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 22.6105 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 46.9168
+
+[node name="Sprite" type="Sprite"]
+
+transform/pos = Vector2( 609.146, 287.058 )
+transform/scale = Vector2( 3.06368, 2.82066 )
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+
+[node name="plat1" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( -147.026, 66.0568 )
+transform/scale = Vector2( 0.130688, 0.141949 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="plat1"]
+
+transform/pos = Vector2( 0, -1.05315 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 22.9827, 0, 0, 2.49646, -2.52698, -4.61814 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="plat1/StaticBody2D"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plat1/StaticBody2D"]
+
+transform/pos = Vector2( -2.52698, -4.61814 )
+transform/scale = Vector2( 22.9827, 2.49646 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="plat2" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( -50.5939, 66.0568 )
+transform/scale = Vector2( 0.130688, 0.141949 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="plat2"]
+
+transform/pos = Vector2( 0, -1.05315 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 22.9827, 0, 0, 2.49646, -2.52698, -4.61814 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="plat2/StaticBody2D"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plat2/StaticBody2D"]
+
+transform/pos = Vector2( -2.52698, -4.61814 )
+transform/scale = Vector2( 22.9827, 2.49646 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="plat5" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 122.591, 15.8239 )
+transform/scale = Vector2( 0.269065, 0.141949 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="plat5"]
+
+transform/pos = Vector2( 0, -1.05315 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 22.9827, 0, 0, 2.49646, -2.52698, -4.61814 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="plat5/StaticBody2D"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plat5/StaticBody2D"]
+
+transform/pos = Vector2( -2.52698, -4.61814 )
+transform/scale = Vector2( 22.9827, 2.49646 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="plat3" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 3.03442, 48.4218 )
+transform/scale = Vector2( 0.130688, 0.141949 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="plat3"]
+
+transform/pos = Vector2( 0, -1.05315 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 7.32887, 0, 0, 2.93917, -0.72453, 6.72005 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="plat3/StaticBody2D"]
+
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plat3/StaticBody2D"]
+
+transform/pos = Vector2( -0.72453, 6.72005 )
+transform/scale = Vector2( 7.32887, 2.93917 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="plat4" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 35.0146, 31.8556 )
+transform/scale = Vector2( 0.130688, 0.141949 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="plat4"]
+
+transform/pos = Vector2( 0, -1.05315 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 7.22152, 0, 0, 2.93917, -2.12005, 6.72005 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="plat4/StaticBody2D"]
+
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plat4/StaticBody2D"]
+
+transform/pos = Vector2( -2.12005, 6.72005 )
+transform/scale = Vector2( 7.22152, 2.93917 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="enzo" type="Node2D" parent="."]
+
+transform/pos = Vector2( -166.389, 46.49 )
+transform/scale = Vector2( 0.305255, 0.281977 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="enzo"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1.80888, 0, 0, 1.32599, 12.1193, -383.845 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 5 )
+
+[node name="SpriteEnzo" type="Sprite" parent="enzo/KinematicBody2D"]
+
+transform/pos = Vector2( 7.27315, -379.706 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enzo/KinematicBody2D"]
+
+transform/pos = Vector2( 12.1193, -383.845 )
+transform/scale = Vector2( 1.80888, 1.32599 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+
