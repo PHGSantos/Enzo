@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://jungle_background.png" type="Texture" id=1]
 [ext_resource path="res://knbd_enzo.gd" type="Script" id=2]
 [ext_resource path="res://enzo.png" type="Texture" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://dinosaurArts-min.png" type="Texture" id=4]
 [ext_resource path="res://movimento.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -21,8 +21,13 @@ height = 46.9168
 
 bake_interval = 5.0
 _data = {
-"points": Vector2Array( 292.064, 9.89299, 1.05808, 3.77624, 53.8168, 8.93309, 3.19664, 3.78501, 0, 0, 261.242, 14.8136 )
+"points": Vector2Array( 292.064, 9.89299, 1.05808, 3.77624, 49.4554, 15.1072, 3.19664, 3.78501, 0, 0, 261.242, 14.8136 )
 }
+
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 10.0
 
 [node name="Sprite" type="Sprite"]
 
@@ -228,8 +233,8 @@ __meta__ = {
 
 [node name="PathFollow2D" type="PathFollow2D" parent="monstro 2/Path2D"]
 
-transform/pos = Vector2( 39.5815, 5.95938 )
-transform/rot = -2.1871
+transform/pos = Vector2( 81.2106, -33.7396 )
+transform/rot = -12.5674
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -240,7 +245,42 @@ lookahead = 4.0
 
 [node name="Sprite" type="Sprite" parent="monstro 2/Path2D/PathFollow2D"]
 
+transform/pos = Vector2( 13.0293, 5.1041 )
+transform/scale = Vector2( 0.0585318, 0.0824098 )
 texture = ExtResource( 4 )
 script/script = ExtResource( 5 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="monstro 2"]
+
+transform/pos = Vector2( 77.4978, -33.6291 )
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 2.687, 0, 0, 2.56525, 5.92615, 5.86261 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="monstro 2/RigidBody2D"]
+
+transform/pos = Vector2( 5.92615, 5.86261 )
+transform/scale = Vector2( 2.687, 2.56525 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
 
 
