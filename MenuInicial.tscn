@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=2 format=1]
 
 [ext_resource path="res://tela1.gd" type="Script" id=1]
-[ext_resource path="res://Imagens/menu_inicial.jpg" type="Texture" id=2]
-[ext_resource path="res://Imagens/titulo.png" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 
@@ -26,13 +24,11 @@ transform/scale = Vector2( 15.9357, 9.34305 )
 
 transform/pos = Vector2( 0.113986, 0.0941362 )
 transform/scale = Vector2( 0.0877192, 0.123726 )
-texture = ExtResource( 2 )
 
 [node name="Title" type="Sprite" parent="Node2D"]
 
 transform/pos = Vector2( -0.676277, -19.3889 )
 transform/scale = Vector2( 0.104157, 0.157128 )
-texture = ExtResource( 3 )
 
 [node name="BotaoOpcoes" type="Button" parent="."]
 

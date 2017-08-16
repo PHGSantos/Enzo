@@ -10,7 +10,7 @@ func _on_Button_pressed():
 	
 func _iniciar():
   get_node("/root/global").goto_scene("res://cena_inicial.tscn")	
-
+   #get_node("/root/animacao_monstro").goto_scene("res://monstro_era_dinossauro.tscn")
 func _sair():
 	get_tree().quit()
 					

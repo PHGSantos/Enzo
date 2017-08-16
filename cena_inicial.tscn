@@ -1,11 +1,10 @@
 [gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://jungle_background.png" type="Texture" id=1]
-[ext_resource path="res://cena_inicial.gd" type="Script" id=2]
-[ext_resource path="res://Imagens/plat_grande.png" type="Texture" id=3]
-[ext_resource path="res://Imagens/plat_pequena.png" type="Texture" id=4]
-[ext_resource path="res://knbd_enzo.gd" type="Script" id=5]
-[ext_resource path="res://Imagens/run/run1.png" type="Texture" id=6]
+[ext_resource path="res://knbd_enzo.gd" type="Script" id=2]
+[ext_resource path="res://enzo.png" type="Texture" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://movimento.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,15 +14,22 @@ extents = Vector2( 10, 22.6105 )
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 10.0
+radius = 13.6697
 height = 46.9168
+
+[sub_resource type="Curve2D" id=3]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 292.064, 9.89299, 1.05808, 3.77624, 53.8168, 8.93309, 3.19664, 3.78501, 0, 0, 261.242, 14.8136 )
+}
 
 [node name="Sprite" type="Sprite"]
 
-transform/pos = Vector2( 609.146, 287.058 )
+transform/pos = Vector2( 669.467, 307.71 )
+transform/rot = 0.2
 transform/scale = Vector2( 3.06368, 2.82066 )
 texture = ExtResource( 1 )
-script/script = ExtResource( 2 )
 
 [node name="plat1" type="Node2D" parent="."]
 
@@ -46,8 +52,6 @@ friction = 1.0
 bounce = 0.0
 
 [node name="Sprite" type="Sprite" parent="plat1/StaticBody2D"]
-
-texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plat1/StaticBody2D"]
 
@@ -79,8 +83,6 @@ bounce = 0.0
 
 [node name="Sprite" type="Sprite" parent="plat2/StaticBody2D"]
 
-texture = ExtResource( 3 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plat2/StaticBody2D"]
 
 transform/pos = Vector2( -2.52698, -4.61814 )
@@ -100,7 +102,7 @@ transform/scale = Vector2( 0.269065, 0.141949 )
 transform/pos = Vector2( 0, -1.05315 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 22.9827, 0, 0, 2.49646, -2.52698, -4.61814 )
+shapes/0/transform = Matrix32( 22.9827, 0, 0, 2.49646, -2.52698, -10.9059 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -111,11 +113,9 @@ bounce = 0.0
 
 [node name="Sprite" type="Sprite" parent="plat5/StaticBody2D"]
 
-texture = ExtResource( 3 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plat5/StaticBody2D"]
 
-transform/pos = Vector2( -2.52698, -4.61814 )
+transform/pos = Vector2( -2.52698, -10.9059 )
 transform/scale = Vector2( 22.9827, 2.49646 )
 shape = SubResource( 1 )
 trigger = false
@@ -143,8 +143,6 @@ bounce = 0.0
 
 [node name="Sprite" type="Sprite" parent="plat3/StaticBody2D"]
 
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plat3/StaticBody2D"]
 
 transform/pos = Vector2( -0.72453, 6.72005 )
@@ -161,10 +159,11 @@ transform/scale = Vector2( 0.130688, 0.141949 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="plat4"]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -1.05315 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 7.22152, 0, 0, 2.93917, -2.12005, 6.72005 )
+shapes/0/transform = Matrix32( 7.22152, 0, 0, 2.93917, 1.64465, 2.95538 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -175,11 +174,9 @@ bounce = 0.0
 
 [node name="Sprite" type="Sprite" parent="plat4/StaticBody2D"]
 
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plat4/StaticBody2D"]
 
-transform/pos = Vector2( -2.12005, 6.72005 )
+transform/pos = Vector2( 1.64465, 2.95538 )
 transform/scale = Vector2( 7.22152, 2.93917 )
 shape = SubResource( 1 )
 trigger = false
@@ -187,6 +184,7 @@ _update_shape_index = 0
 
 [node name="enzo" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( -166.389, 46.49 )
 transform/scale = Vector2( 0.305255, 0.281977 )
 
@@ -199,12 +197,12 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 5 )
+script/script = ExtResource( 2 )
 
 [node name="SpriteEnzo" type="Sprite" parent="enzo/KinematicBody2D"]
 
 transform/pos = Vector2( 7.27315, -379.706 )
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enzo/KinematicBody2D"]
 
@@ -213,5 +211,36 @@ transform/scale = Vector2( 1.80888, 1.32599 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
+
+[node name="monstro 2" type="Node2D" parent="."]
+
+transform/pos = Vector2( 71.2496, -0.0834808 )
+transform/scale = Vector2( 0.305255, 0.281977 )
+
+[node name="Path2D" type="Path2D" parent="monstro 2"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( -0.971802, -9.07758 )
+curve = SubResource( 3 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="monstro 2/Path2D"]
+
+transform/pos = Vector2( 39.5815, 5.95938 )
+transform/rot = -2.1871
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="Sprite" type="Sprite" parent="monstro 2/Path2D/PathFollow2D"]
+
+texture = ExtResource( 4 )
+script/script = ExtResource( 5 )
 
 

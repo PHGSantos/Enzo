@@ -118,10 +118,10 @@ func _fixed_process(delta):
 	prev_jump_pressed = jump
 	
 	if walk_right:
-		get_node("SpriteEnzo").set_flip_h(false)
+		get_node("SpriteMonstro").set_flip_h(true)
 
 	if walk_left:
-		get_node("SpriteEnzo").set_flip_h(true)
+		get_node("SpriteMonstro").set_flip_h(true)
 
 func _ready():
 	set_fixed_process(true)

@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=2 format=1]
 
 [ext_resource path="res://Menu2.gd" type="Script" id=1]
-[ext_resource path="res://Imagens/5386287-bookcase-wallpaper.jpg" type="Texture" id=2]
-[ext_resource path="res://Imagens/untitled_page.png" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 
@@ -24,13 +22,11 @@ editor/display_folded = true
 
 transform/pos = Vector2( 511.128, 301.013 )
 transform/scale = Vector2( 3.50295, 1.98333 )
-texture = ExtResource( 2 )
 
 [node name="Title" type="Sprite" parent="Node2D"]
 
 transform/pos = Vector2( 559.721, 187.708 )
 transform/rot = -360.0
-texture = ExtResource( 3 )
 
 [node name="BotaoVoltar" type="Button" parent="."]
 
